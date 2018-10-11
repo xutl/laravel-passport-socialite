@@ -1,0 +1,29 @@
+{
+  "name": "xutl/laravel-passport-socialite",
+  "description": "This is a Laravel passport grant for social.",
+  "keywords": [ "passport", "laravel", "social" ],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "laravel/passport": "^5.0 || ^6.0 || ^7.0",
+    "laravel/socialite": "^3.0",
+    "illuminate/support": "^5.0",
+    "schedula/league-oauth2-social" : "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "XuTL\\Passport\\Socialite\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "XuTL\\Passport\\Socialite\\PassportSocialiteServiceProvider"
+      ]
+    }
+  },
+  "prefer-stable": true
+}
