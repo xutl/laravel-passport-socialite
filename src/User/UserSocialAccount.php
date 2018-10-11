@@ -15,7 +15,7 @@ interface UserSocialAccount {
      * Get user from social provider and from provider's user's id
      * 
      * @param string $provider Provider name as requested from oauth e.g. facebook
-     * @param string $id Id used by provider
+     * @param string $socialUser user by provider
      */
-    public static function findForPassportSocialite($provider, $id); 
+    public static function findForPassportSocialite($provider, $socialUser);
 }
