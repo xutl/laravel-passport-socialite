@@ -61,7 +61,7 @@ class User extends Authenticatable implements UserSocialAccount {
     * @return User
     */
     public static function findForPassportSocialite($provider,$socialUser) {
-        $account = SocialAccount::where('provider', $provider)->where('social_id', $id)->first();
+        $account = SocialAccount::where('provider', $provider)->where('social_id', $socialUser->getId())->first();
         if($account && $account->user) {
             return $account->user;
         }
