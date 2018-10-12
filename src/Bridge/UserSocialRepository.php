@@ -15,7 +15,7 @@ use InvalidArgumentException;
 use Laravel\Passport\Bridge\User;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use Schedula\League\OAuth2\Server\Repositories\UserSocialRepositoryInterface;
+use XuTL\League\OAuth2\Server\Repositories\UserSocialRepositoryInterface;
 use Socialite;
 
 

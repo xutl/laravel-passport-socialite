@@ -15,7 +15,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Bridge\RefreshTokenRepository;
 use Laravel\Passport\Passport;
 use League\OAuth2\Server\AuthorizationServer;
-use Schedula\League\OAuth2\Server\Grant\SocialGrant;
+use XuTL\League\OAuth2\Server\Grant\SocialGrant;
 
 class PassportSocialiteServiceProvider extends ServiceProvider
 {
