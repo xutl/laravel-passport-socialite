@@ -16,25 +16,29 @@ use Laravel\Passport\Bridge\RefreshTokenRepository;
 use Laravel\Passport\Passport;
 use League\OAuth2\Server\AuthorizationServer;
 use Schedula\League\OAuth2\Server\Grant\SocialGrant;
-class PassportSocialiteServiceProvider extends ServiceProvider {
 
-    public function register () {
-        app()->afterResolving(AuthorizationServer::class, function(AuthorizationServer $oauthServer) {
+class PassportSocialiteServiceProvider extends ServiceProvider
+{
+
+    public function register()
+    {
+        app()->afterResolving(AuthorizationServer::class, function (AuthorizationServer $oauthServer) {
             $oauthServer->enableGrantType($this->makeSocialGrant(), Passport::tokensExpireIn());
         });
     }
 
     /**
      * Create and configure Social Grant
-     * 
+     *
      * @return Schedula\League\OAuth2\Server\Grant\SocialGrant
      */
-    public function makeSocialGrant() {
+    public function makeSocialGrant()
+    {
         $grant = new SocialGrant(
             $this->app->make(Bridge\UserSocialRepository::class),
             $this->app->make(RefreshTokenRepository::class)
         );
         $grant->setRefreshTokenTTL(Passport::refreshTokensExpireIn());
-        return $grant;        
+        return $grant;
     }
 }
